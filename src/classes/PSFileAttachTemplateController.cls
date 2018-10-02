@@ -7,7 +7,7 @@ public class PSFileAttachTemplateController {
 
       try {
         List<FileDef> fileDefList = new List<FileDef>();
-        for (PSFileAttachDef__c t : [SELECT Id, Filename__c, Allowed_Extensions__c, Help_Text__c, Online_Template__c, 
+        for (PSFileAttachDef__c t : [SELECT Id, Filename__c, Allowed_Extensions__c, Description__c, Online_Template__c, 
                                             Required__c, Upload_Field__c
                                        FROM PSFileAttachDef__c 
                                       WHERE PSFileAttachTemplate__c = :templateDefId 
@@ -17,7 +17,7 @@ public class PSFileAttachTemplateController {
             fd.id = t.id;
             fd.filename = t.Filename__c;
             fd.allowedExtensions = parseExtensions(t.Allowed_Extensions__c);
-            fd.helpText = t.Help_Text__c;
+            fd.description = t.Description__c;
             fd.onlineTemplateURL = t.Online_Template__c;
             fd.required = t.Required__c;
             fd.uploadField = t.Upload_Field__c;
@@ -89,7 +89,7 @@ public class PSFileAttachTemplateController {
         @AuraEnabled public String id;
         @AuraEnabled public String filename;
         @AuraEnabled public String allowedExtensions;
-        @AuraEnabled public String helpText;
+        @AuraEnabled public String description;
         @AuraEnabled public String onlineTemplateURL;
         @AuraEnabled public Boolean required = false;
         @AuraEnabled public String uploadField;

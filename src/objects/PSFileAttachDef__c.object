@@ -67,21 +67,21 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Filename__c</fullName>
+        <fullName>Description__c</fullName>
         <externalId>false</externalId>
-        <label>Filename</label>
-        <length>75</length>
-        <required>true</required>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Help_Text__c</fullName>
+        <fullName>Filename__c</fullName>
         <externalId>false</externalId>
-        <label>Help Text</label>
-        <length>255</length>
-        <required>false</required>
+        <label>Filename</label>
+        <length>75</length>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>

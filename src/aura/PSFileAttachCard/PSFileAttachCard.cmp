@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="description slds-p-top_x-small" style="min-height: 60px;">
-            {!v.fileDef.helpText}
+            {!v.fileDef.description}
         </div>
 
         <aura:renderIf isTrue="{!v.fileDef.uploaded == true}">

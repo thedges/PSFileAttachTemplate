@@ -32,5 +32,9 @@
         <members>PSFileAttachTemplate__c-PSFileAttachTemplate Layout</members>
         <name>Layout</name>
     </types>
+    <types>
+        <members>PSFileAttachTemplate</members>
+        <name>PermissionSet</name>
+    </types>
     <version>42.0</version>
 </Package>
