@@ -1,28 +1,30 @@
 # PSFileAttachTemplate
-This package contains a Lightning component for declaring a template to define required/optional files to attach to a target record. I provides following key functionality:
-* <b>File Template</b> - create a template to define the required and optional files to allow user to attach to a record. 
-* <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required files. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded)
-   * <b>Verify</b> - a verification screen of information about to be submited
-   * <b>Confirmation</b> - screen confirming submission of service case with link to new case record
+This package contains a Lightning component for declaring a template to define required/optional files to attach to a target record. It provides following key functionality:
+* <b>File Template</b> - create a template to define the required and optional files to allow user to attach to a record. The template utilizes the PSFileAttachTemplate and PSFileAttachDef custom objects. You can specify the following for each file to be attached:
+   * <b>Filename</b> - the name to set at the title of the uploaded file
+   * <b>Required</b> - set boolean if file is required
+   * <b>Allowed Extensions</b> - the file extensions allowed for this document. Provide a comma separated value list like "jpg,png,pdf,zip". Leave blank if you will accept any document format.
+   * <b>Description</b> - a description of the file to upload and any user instructions
+   * <b>Online Template</b> - a URL to a document template that user can download to fill out and upload
+   * <b>Upload Field</b> - the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded.
+* <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required/optional files to be attached. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded). The card shows the following:
+   * <b>Title</b> - the name of the file as defined in file definiton above. The file name is clickable once a file is uploaded.
+   * <b>Description</b> - the description details as defined in the file definition above
+   * <b>File Upload button</b> - section to upload file (either pick file on file system or drag-n-drop)
+   * <b>File State</b> - for files that have been uploaded, the file stats: size, type, load date/time
+   * <b>Template Icon</b> - icon that when clicked will take user to the online template defined in the file definition
+   * <b>Delete Icon</b> - for an uploaded file, a delete icon to easily be able to delete file if needed
 
-<b>Dependency:</b> Install the [PSCommon](https://github.com/thedges/PSCommon) package first
+![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate.gif "PSFileAttachTemplate")
 
-![alt text](https://github.com/thedges/PS311ServiceRequest/blob/master/311-community.png "Sample Image")
+* Here are steps to use this component:
+  * Install the component per the "Deploy to Salesforce" button below
+  * Make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects
+  * Add PSFileAttachTemplate tab to user profile
+  * Navigate to the PSFileAttachTemplate tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
+  * For the template, create a list of file definitions for the files to attach to the record. Set the record fields (filename, required, description, etc...) as defined above
+  * Drop the PSFileAttachTemplate Lightning Component on an internal or community page. Configure the Lightning Component and select the appropriate template name you specified earlier.
 
-* The component configuration fields are:
-  - <b>Auto Center</b> - a flag to set whether the map auto-centers on current GPS location or use the default lat/lng below
-  - <b>Map Center Latitude</b> - the default latitude value for centering the map
-  - <b>Map Center Latitude</b> - the default longitude value for centering the map
-  - <b>Map Zoom Level</b> - the default map zoom level; default: 11
-  - <b>Full Address Field</b> - the field API name for storing the full address string (street, city, state, postal)
-  - <b>Street Field</b> - the field API name for storing the street
-  - <b>City Field</b> - the field API name for storing the city
-  - <b>State Field</b> - the field API name for storing the state
-  - <b>Zipcode Field</b> - the field API name for storing the zipcode/postal code
-  - <b>Record Type</b> - a drop-down list of Case record types; select one to filter Type field values and to set record type on new case creation
-  - <b>My Domain</b> - if a record type is selected above, provide your My Domain value as shown in the example picture below.
-
-![alt text](https://github.com/thedges/PS311ServiceRequest/blob/master/mydomain.png "My Domain")
 
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
