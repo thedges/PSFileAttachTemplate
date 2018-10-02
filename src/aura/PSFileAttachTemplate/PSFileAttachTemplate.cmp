@@ -2,6 +2,7 @@
         access="global">
         <aura:attribute name="templateDefId" type="String" default="" />
         <aura:attribute name="fileDefs" type="List" />
+        <aura:attribute name="showFilePreview" type="Boolean" default="false" />
 
         <aura:handler name="refreshEvent" event="c:PSFileAttachRefresh" action="{!c.doInit}" />
 
@@ -11,7 +12,7 @@
                 <div class="slds-grid slds-wrap slds-gutters slds-grid--vertical-stretch">
                 <aura:iteration items="{!v.fileDefs}" var="f">
                         <div class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 ">
-                          <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"/>
+                          <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}" showFilePreview="{!v.showFilePreview}"/>
                         </div>
                 </aura:iteration>
                 </div>

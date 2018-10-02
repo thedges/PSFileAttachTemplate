@@ -2,6 +2,7 @@
     access="global">
     <aura:attribute name="fileDef" type="Object" />
     <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="showFilePreview" type="Boolean"/>
 
     <aura:registerEvent name="refreshEvent" type="c:PSFileAttachRefresh" />
 
@@ -64,5 +65,10 @@
             </div>
         </aura:renderIf>
 
+        <aura:renderIf isTrue="{!and(v.fileDef.uploaded, v.showFilePreview)}">
+            <div class="slds-p-top_x-small">
+                <lightning:fileCard fileId="{!v.fileDef.attachId}"  />
+            </div>
+        </aura:renderIf>
     </div>
 </aura:component>

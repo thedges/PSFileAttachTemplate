@@ -10,6 +10,10 @@
     font-size: 0.85em;
 }
 
+.THIS .forceContentFileCard {
+    width: 100% !important;
+}
+
 .THIS .title {
     font-size: 1em !important;
     font-weight: bold;
