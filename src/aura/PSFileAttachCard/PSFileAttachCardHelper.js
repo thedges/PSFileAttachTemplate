@@ -13,7 +13,8 @@
 			"recordId": recordId,
 			"fileId": fileId,
 			"fileName": fileDef.filename,
-			"bField": fileDef.uploadField
+			"bField": fileDef.uploadField,
+			"commAccess": fileDef.communityAccess
 		});
 
 		action.setCallback(this, function (actionResult) {

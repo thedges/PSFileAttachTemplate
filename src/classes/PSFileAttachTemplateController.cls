@@ -8,7 +8,7 @@ public class PSFileAttachTemplateController {
       try {
         List<FileDef> fileDefList = new List<FileDef>();
         for (PSFileAttachDef__c t : [SELECT Id, Filename__c, Allowed_Extensions__c, Description__c, Online_Template__c, 
-                                            Required__c, Upload_Field__c
+                                            Required__c, Upload_Field__c, Community_Access__c
                                        FROM PSFileAttachDef__c 
                                       WHERE PSFileAttachTemplate__c = :templateDefId 
                                       ORDER BY Required__c DESC, Filename__c ASC])
@@ -21,6 +21,7 @@ public class PSFileAttachTemplateController {
             fd.onlineTemplateURL = t.Online_Template__c;
             fd.required = t.Required__c;
             fd.uploadField = t.Upload_Field__c;
+            fd.communityAccess = t.Community_Access__c;
             fileDefList.add(fd);
         }
 
@@ -93,6 +94,7 @@ public class PSFileAttachTemplateController {
         @AuraEnabled public String onlineTemplateURL;
         @AuraEnabled public Boolean required = false;
         @AuraEnabled public String uploadField;
+        @AuraEnabled public Boolean communityAccess = false;
 
         @AuraEnabled public String attachId;
         @AuraEnabled public Boolean uploaded = false;
