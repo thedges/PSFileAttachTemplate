@@ -1,0 +1,45 @@
+.THIS .fileDef {
+}
+
+.THIS .slds-file-selector__button {
+    max-height: 100%;
+    font-size: 0.85em;
+}
+
+.THIS .slds-file-selector__text {
+    font-size: 0.85em;
+}
+
+.THIS .title {
+    font-size: 1em !important;
+    font-weight: bold;
+    color:#006ecf;
+}
+
+.THIS .description {
+    font-size: 0.85em !important;
+    font-style: italic;
+}
+
+.THIS .stats {
+    font-size: 0.85em !important;
+}
+
+.THIS .deleteIcon:HOVER {
+   cursor: pointer;
+}
+
+.THIS .showHover:HOVER {
+    cursor: pointer;
+ }
+
+.THIS .toolbar {
+}
+
+.THIS .fileRequired {
+    background-color: #ecc6c6;
+}
+
+.THIS .uploaded {
+    background-color: #b3e6b3;
+}

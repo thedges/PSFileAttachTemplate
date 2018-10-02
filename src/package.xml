@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>PSFileAttachCardController</members>
+        <members>PSFileAttachTemplateController</members>
+        <members>PSFileAttachTemplatePicklist</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>PSFileAttachCard</members>
+        <members>PSFileAttachRefresh</members>
+        <members>PSFileAttachTemplate</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>PSFileAttachDef__c</members>
+        <members>PSFileAttachTemplate__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>PSFileAttachTemplate__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>PSFileAttachDef_Record_Page</members>
+        <members>PSFileAttachTemplate_Record_Page</members>
+        <members>PSFileAttachTemplate_Record_Page1</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>PSFileAttachDef__c-PSFileAttachDef Layout</members>
+        <members>PSFileAttachTemplate__c-PSFileAttachTemplate Layout</members>
+        <name>Layout</name>
+    </types>
+    <version>42.0</version>
+</Package>

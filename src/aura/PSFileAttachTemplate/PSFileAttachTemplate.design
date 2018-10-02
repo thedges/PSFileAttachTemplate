@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="templateDefId" label="Template Definition" Description="The PSFileAttachTemplate definition" datasource="apex://PSFileAttachTemplatePicklist"/>
+
+</design:component>
