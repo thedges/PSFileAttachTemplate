@@ -10,7 +10,7 @@ This package contains a Lightning component for declaring a template to define r
    * <b>Community Access</b> - a boolean field to set if community users should be able to view the file uploaded by internal user
 * <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required/optional files to be attached. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded).
 
-   Configuration options"
+   Configuration options:
    * <b>Template</b> - select the template to apply
    * <b>Show File Preview</b> - for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features
    
