@@ -19,8 +19,7 @@ This package contains a Lightning component for declaring a template to define r
 
 * <b>Here are steps to use this component:</b>
   * Install the component per the "Deploy to Salesforce" button below
-  * Make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects
-  * Add PSFileAttachTemplate tab to user profile
+  * Setup users to have access to custom objects that drive the template. Either assign the permset "PSFileAttachTemplate" to your users  ...or... make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects and PSFileAttachTemplate tab
   * Navigate to the PSFileAttachTemplate tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
   * For the template, create a list of file definitions for the files to attach to the record. Set the record fields (filename, required, description, etc...) as defined above
   * Drop the PSFileAttachTemplate Lightning Component on an internal or community page. Configure the Lightning Component and select the appropriate template name you specified earlier.
