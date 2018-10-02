@@ -17,7 +17,7 @@ This package contains a Lightning component for declaring a template to define r
 
 ![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate.gif "PSFileAttachTemplate")
 
-* Here are steps to use this component:
+* <b>Here are steps to use this component:</b>
   * Install the component per the "Deploy to Salesforce" button below
   * Make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects
   * Add PSFileAttachTemplate tab to user profile
