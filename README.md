@@ -1,5 +1,9 @@
 # PSFileAttachTemplate
-This package contains a Lightning component for declaring a template to define required/optional files to attach to a target record. It provides following key functionality:
+This package contains a Lightning component for declaring a template to define required/optional files to attach to a target record. 
+
+![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate.gif "PSFileAttachTemplate")
+
+It provides following key functionality:
 * <b>File Template</b> - create a template to define the required and optional files to allow user to attach to a record. The template utilizes the PSFileAttachTemplate and PSFileAttachDef custom objects. You can specify the following for each file to be attached:
    * <b>Filename</b> - the name to set at the title of the uploaded file
    * <b>Required</b> - set boolean if file is required
@@ -13,7 +17,9 @@ This package contains a Lightning component for declaring a template to define r
    Configuration options:
    * <b>Template</b> - select the template to apply
    * <b>Show File Preview</b> - for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features
-   
+
+![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate-filePreview.png "File Preview Option")
+
    The card shows the following:
    * <b>Title</b> - the name of the file as defined in file definiton above. The file name is clickable once a file is uploaded.
    * <b>Description</b> - the description details as defined in the file definition above
@@ -22,7 +28,6 @@ This package contains a Lightning component for declaring a template to define r
    * <b>Template Icon</b> - icon that when clicked will take user to the online template defined in the file definition
    * <b>Delete Icon</b> - for an uploaded file, a delete icon to easily be able to delete file if needed
 
-![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate.gif "PSFileAttachTemplate")
 
 * <b>Here are steps to use this component:</b>
   * Install the component per the "Deploy to Salesforce" button below
