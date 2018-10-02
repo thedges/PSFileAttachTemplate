@@ -8,7 +8,13 @@ This package contains a Lightning component for declaring a template to define r
    * <b>Online Template</b> - a URL to a document template that user can download to fill out and upload
    * <b>Upload Field</b> - the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded.
    * <b>Community Access</b> - a boolean field to set if community users should be able to view the file uploaded by internal user
-* <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required/optional files to be attached. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded). The card shows the following:
+* <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required/optional files to be attached. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded).
+
+   Configuration options"
+   * <b>Template</b> - select the template to apply
+   * <b>Show File Preview</b> - for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features
+   
+   The card shows the following:
    * <b>Title</b> - the name of the file as defined in file definiton above. The file name is clickable once a file is uploaded.
    * <b>Description</b> - the description details as defined in the file definition above
    * <b>File Upload button</b> - section to upload file (either pick file on file system or drag-n-drop)
