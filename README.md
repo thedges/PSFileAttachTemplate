@@ -1,4 +1,6 @@
 # PSFileAttachTemplate
+THIS SOFTWARE IS COVERED BY [THIS DISCLAIMER](https://raw.githubusercontent.com/thedges/Disclaimer/master/disclaimer.txt).
+
 This package contains a Lightning component for declaring a template to define required/optional files to attach to a target record. 
 
 ![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate.gif "PSFileAttachTemplate")
