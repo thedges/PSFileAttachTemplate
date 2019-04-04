@@ -31,7 +31,7 @@ It provides following key functionality:
    * <b>Delete Icon</b> - for an uploaded file, a delete icon to easily be able to delete file if needed
 
 
-* <b>Here are steps to use this component:</b>
+<b>Here are steps to use this component:</b>
   * Install the component per the "Deploy to Salesforce" button below
   * Setup users to have access to custom objects that drive the template. Either assign the permset "PSFileAttachTemplate" to your users  ...or... make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects and PSFileAttachTemplate tab
   * Navigate to the PSFileAttachTemplate tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
