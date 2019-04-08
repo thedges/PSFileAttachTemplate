@@ -7,6 +7,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>PSFileAttachBanner</members>
         <members>PSFileAttachCard</members>
         <members>PSFileAttachRefresh</members>
         <members>PSFileAttachTemplate</members>
@@ -35,6 +36,10 @@
     <types>
         <members>PSFileAttachTemplate</members>
         <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>PSFileAttachWarningIcon</members>
+        <name>StaticResource</name>
     </types>
     <version>42.0</version>
 </Package>

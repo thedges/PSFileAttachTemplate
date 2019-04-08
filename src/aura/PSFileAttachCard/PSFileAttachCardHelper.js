@@ -20,11 +20,15 @@
 		action.setCallback(this, function (actionResult) {
 			var state = actionResult.getState();
 			if (state === "SUCCESS") {
+				console.log('1');
 				var resp = actionResult.getReturnValue();
-				console.log(JSON.stringify(resp));
+				//console.log(JSON.stringify(resp));
 
-				component.getEvent("refreshEvent").fire();
+				$A.get("e.c:PSFileAttachRefresh").fire();
+				console.log('2');
+				//component.getEvent("refreshEvent").fire();
 				$A.get('e.force:refreshView').fire();
+				console.log('3');
 
 			} else {
 				self.handleErrors(component, actionResult.getError());
@@ -53,7 +57,8 @@
 		action.setCallback(this, function (actionResult) {
 			var state = actionResult.getState();
 			if (state === "SUCCESS") {
-				component.getEvent("refreshEvent").fire();
+				$A.get("e.c:PSFileAttachRefresh").fire();
+				//component.getEvent("refreshEvent").fire();
 				$A.get('e.force:refreshView').fire();
 
 			} else {

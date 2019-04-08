@@ -1,2 +1,2 @@
-<aura:event type="COMPONENT" description="Event used to tell the parent to refresh" >
+<aura:event type="APPLICATION" description="Event used to tell the parent to refresh" >
 </aura:event>

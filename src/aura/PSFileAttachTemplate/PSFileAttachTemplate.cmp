@@ -4,7 +4,7 @@
         <aura:attribute name="fileDefs" type="List" />
         <aura:attribute name="showFilePreview" type="Boolean" default="false" />
 
-        <aura:handler name="refreshEvent" event="c:PSFileAttachRefresh" action="{!c.doInit}" />
+        <aura:handler event="c:PSFileAttachRefresh" action="{!c.doInit}" />
 
         <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 

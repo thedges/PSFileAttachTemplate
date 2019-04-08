@@ -1,6 +1,4 @@
 public without sharing class PSFileAttachCardController {
-  // test
-  	
   @AuraEnabled
   public static void setFile(String recordId, String fileId, String fileName, String bField, Boolean commAccess)
   {
