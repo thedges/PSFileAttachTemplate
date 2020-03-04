@@ -15,6 +15,7 @@
     </types>
     <types>
         <members>PSFileAttachDef__c</members>
+        <members>PSFileAttachReview__c</members>
         <members>PSFileAttachTemplate__c</members>
         <name>CustomObject</name>
     </types>

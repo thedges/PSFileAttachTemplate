@@ -59,6 +59,9 @@
         <fields>Allowed_Extensions__c</fields>
         <fields>Required__c</fields>
         <fields>Upload_Field__c</fields>
+        <fields>Filter_Field__c</fields>
+        <fields>Filter_Values__c</fields>
+        <fields>Review__c</fields>
         <relatedList>PSFileAttachDef__c.PSFileAttachTemplate__c</relatedList>
     </relatedLists>
     <relatedLists>

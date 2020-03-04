@@ -1,19 +1,6 @@
 ({
 	onRender : function(component, event, helper) {
-		var fileDef = component.get("v.fileDef");
-
-		if (fileDef.required && !fileDef.uploaded)
-		{
-		  document.getElementById(fileDef.id).style.backgroundColor = "#ecc6c6";
-		}
-		else if (fileDef.uploaded)
-		{
-		  document.getElementById(fileDef.id).style.backgroundColor = "#b3e6b3";
-		}
-		else
-		{
-		  document.getElementById(fileDef.id).style.backgroundColor = "#f2f2f2";
-		}
+		helper.setBackgroundColor(component);
 	},
 	handleUploadFinished : function(component, event, helper) {
 		console.log('handleUploadFinished...');
@@ -39,6 +26,19 @@
 		toastEvent.fire();
 		*/
 	},
+	handleReviewCheck : function(component, event, helper) {
+		console.log('handleReviewCheck...');
+
+		var fileDef = component.get("v.fileDef");
+
+		console.log('fileDef1=' + JSON.stringify(fileDef));
+		fileDef.reviewed = !fileDef.reviewed;
+		console.log('fileDef2=' + JSON.stringify(fileDef));
+		component.set("v.fileDef", fileDef);
+
+		helper.setFileReview(component, fileDef.reviewed);
+
+    },
 	handleDeleteAttachment : function(component, event, helper) {
 		console.log('handleDeleteAttachment...');
 		helper.deleteFile(component);

@@ -10,6 +10,10 @@
     font-size: 0.85em;
 }
 
+.THIS .review .slds-form-element__label {
+    font-weight: bold;
+}
+
 .THIS .forceContentFileCard {
     width: 100% !important;
 }

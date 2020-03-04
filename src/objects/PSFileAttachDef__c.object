@@ -96,6 +96,26 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Filter_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>Filter Field</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Filter_Values__c</fullName>
+        <externalId>false</externalId>
+        <label>Filter Values</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Online_Template__c</fullName>
         <externalId>false</externalId>
         <label>Online Template</label>
@@ -121,6 +141,14 @@
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Review</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>

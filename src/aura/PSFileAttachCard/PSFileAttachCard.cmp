@@ -1,8 +1,9 @@
-<aura:component controller="PSFileAttachCardController" implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
-    access="global">
+<aura:component controller="PSFileAttachCardController"
+    implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes" access="global">
     <aura:attribute name="fileDef" type="Object" />
     <aura:attribute name="recordId" type="String" />
-    <aura:attribute name="showFilePreview" type="Boolean"/>
+    <aura:attribute name="showFilePreview" type="Boolean" />
+    <aura:attribute name="reviewOption" type="Boolean" default="false" />
 
     <aura:registerEvent name="refreshEvent" type="c:PSFileAttachRefresh" />
 
@@ -18,26 +19,29 @@
             <div class="slds-size_10-of-12 title">
                 <aura:renderIf isTrue="{!v.fileDef.uploaded}">
                     <span class="showHover" onclick="{!c.handleViewAttachment}">{!v.fileDef.filename}</span>
-                        <aura:set attribute="else">
-                                {!v.fileDef.filename}
-                        </aura:set>
+                    <aura:set attribute="else">
+                        {!v.fileDef.filename}
+                    </aura:set>
                 </aura:renderIf>
-              
+
             </div>
             <div class="slds-col slds-size_1-of-12 toolbar">
-                <aura:renderIf isTrue="{!and(!v.fileDef.uploaded, v.fileDef.onlineTemplateURL != null, v.fileDef.onlineTemplateURL.length > 0)}">
+                <aura:renderIf
+                    isTrue="{!and(!v.fileDef.uploaded, v.fileDef.onlineTemplateURL != null, v.fileDef.onlineTemplateURL.length > 0)}">
                     <a href="{!v.fileDef.onlineTemplateURL}" target="_default">
                         <lightning:icon iconName="utility:edit_form" size="small" alternativeText="Template Form" /></a>
                 </aura:renderIf>
                 <aura:renderIf isTrue="{!v.fileDef.uploaded}">
-                    <lightning:icon class="deleteIcon" iconName="utility:delete" size="small" alternativeText="Delete Uploaded Form"
-                        onclick="{!c.handleDeleteAttachment}" />
+                    <lightning:icon class="deleteIcon" iconName="utility:delete" size="small"
+                        alternativeText="Delete Uploaded Form" onclick="{!c.handleDeleteAttachment}" />
                 </aura:renderIf>
             </div>
         </div>
         <div class="description slds-p-top_x-small" style="min-height: 60px;">
             {!v.fileDef.description}
         </div>
+
+
 
         <aura:renderIf isTrue="{!v.fileDef.uploaded == true}">
             <div class="stats slds-p-top_x-small">
@@ -60,14 +64,26 @@
 
         <aura:renderIf isTrue="{!v.fileDef.uploaded == false}">
             <div class="upload slds-p-top_x-small">
-                <lightning:fileUpload name="{!v.fileDef.id}" class="left-label" label="Test" multiple="false" accept="{!v.fileDef.allowedExtensions}"
-                    recordId="{!v.recordId}" onuploadfinished="{!c.handleUploadFinished}" title="Test" />
+                <lightning:fileUpload name="{!v.fileDef.id}" class="left-label" label="Test" multiple="false"
+                    accept="{!v.fileDef.allowedExtensions}" recordId="{!v.recordId}"
+                    onuploadfinished="{!c.handleUploadFinished}" title="Test" />
             </div>
         </aura:renderIf>
 
         <aura:renderIf isTrue="{!and(v.fileDef.uploaded, v.showFilePreview)}">
             <div class="slds-p-top_x-small">
-                <lightning:fileCard fileId="{!v.fileDef.attachId}"  />
+                <lightning:fileCard fileId="{!v.fileDef.attachId}" />
+            </div>
+        </aura:renderIf>
+
+        <aura:renderIf isTrue="{!and(v.fileDef.uploaded,v.fileDef.reviewOption)}">
+            <div class="review slds-p-top_x-small" style="width: 100%; overflow: hidden;">
+                <div style="width: 170px; float: left;">
+                <lightning:input type="checkbox" label="Document reviewed" checked="{!v.fileDef.reviewed == true}" name="docReviewed" onchange="{!c.handleReviewCheck}" />
+                </div>
+                <aura:renderIf isTrue="{!v.fileDef.reviewerName != null}">
+                  <div style="margin-left: 180px;font-weight:bold;color:#3e3e3c">{!'(' + v.fileDef.reviewerName + ' at ' + v.fileDef.reviewerDate + ')'}</div>
+                  </aura:renderIf>
             </div>
         </aura:renderIf>
     </div>
