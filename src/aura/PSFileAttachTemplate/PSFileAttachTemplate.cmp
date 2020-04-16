@@ -1,9 +1,14 @@
 <aura:component controller="PSFileAttachTemplateController"
-        implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+        implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens"
         access="global">
-        <aura:attribute name="templateDefId" type="String" default="" />
+        <aura:attribute name="recordId" type="String" access="global" />
+        <aura:attribute name="templateDefId" type="String" default="" access="global" />
         <aura:attribute name="fileDefs" type="List" />
-        <aura:attribute name="showFilePreview" type="Boolean" default="false" />
+        <aura:attribute name="showFilePreview" type="Boolean" default="true" />
+
+        <aura:attribute name="width" type="String" />
+        <lightning:flexipageRegionInfo width="{!v.width}" />
+
 
         <aura:handler event="c:PSFileAttachRefresh" action="{!c.doInit}" />
 
@@ -12,11 +17,68 @@
         <div>
                 <div class="slds-grid slds-wrap slds-gutters slds-grid--vertical-stretch">
                         <aura:iteration items="{!v.fileDefs}" var="f">
-                                <div
-                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 ">
-                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
-                                                showFilePreview="{!v.showFilePreview}" />
-                                </div>
+                                <aura:renderIf isTrue="{!v.width == null}">
+                                        <aura:renderIf isTrue="{!v.fileDefs.length > 2}">
+                                                <div
+                                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 ">
+                                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                                showFilePreview="{!v.showFilePreview}" />
+                                                </div>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!v.fileDefs.length == 2}">
+                                                <div
+                                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12 ">
+                                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                                showFilePreview="{!v.showFilePreview}" />
+                                                </div>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!v.fileDefs.length == 1}">
+                                                <div
+                                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_6-of-12 ">
+                                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                                showFilePreview="{!v.showFilePreview}" />
+                                                </div>
+                                        </aura:renderIf>
+        
+                                </aura:renderIf>
+                                <aura:renderIf isTrue="{!v.width == 'SMALL'}">
+                                        <div
+                                                class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                                <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                        showFilePreview="{!v.showFilePreview}" />
+                                        </div>
+                                </aura:renderIf>
+                                <aura:renderIf isTrue="{!v.width == 'MEDIUM'}">
+                                        <div
+                                                class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                                <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                        showFilePreview="{!v.showFilePreview}" />
+                                        </div>
+                                </aura:renderIf>
+                                <aura:renderIf isTrue="{!or(v.width == 'LARGE', v.width == 'XLARGE')}">
+                                        <aura:renderIf isTrue="{!v.fileDefs.length > 2}">
+                                                <div
+                                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 ">
+                                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                                showFilePreview="{!v.showFilePreview}" />
+                                                </div>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!v.fileDefs.length == 2}">
+                                                <div
+                                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12 ">
+                                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                                showFilePreview="{!v.showFilePreview}" />
+                                                </div>
+                                        </aura:renderIf>
+                                        <aura:renderIf isTrue="{!v.fileDefs.length == 1}">
+                                                <div
+                                                        class="slds-col slds-p-bottom_medium slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_6-of-12 ">
+                                                        <c:PSFileAttachCard fileDef="{!f}" recordId="{!v.recordId}"
+                                                                showFilePreview="{!v.showFilePreview}" />
+                                                </div>
+                                        </aura:renderIf>
+                                </aura:renderIf>
+
                         </aura:iteration>
                 </div>
 

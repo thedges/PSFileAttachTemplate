@@ -25,7 +25,7 @@
                 </aura:renderIf>
 
             </div>
-            <div class="slds-col slds-size_1-of-12 toolbar">
+            <div class="slds-col slds-size_1-of-12">
                 <aura:renderIf
                     isTrue="{!and(!v.fileDef.uploaded, v.fileDef.onlineTemplateURL != null, v.fileDef.onlineTemplateURL.length > 0)}">
                     <a href="{!v.fileDef.onlineTemplateURL}" target="_default">

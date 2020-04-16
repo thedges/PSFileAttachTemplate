@@ -1,4 +1,5 @@
 <design:component>
+    <design:attribute name="recordId" label="Record ID to attach files to" />
     <design:attribute name="templateDefId" label="Template Definition" Description="The PSFileAttachTemplate definition" datasource="apex://PSFileAttachTemplatePicklist"/>
     <design:attribute name="showFilePreview" label="Show file preview in card for uploaded files" />
 </design:component>
