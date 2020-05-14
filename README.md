@@ -21,6 +21,7 @@ It provides following key functionality:
 * <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required/optional files to be attached. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded).
 
    Configuration options:
+   * <b>Record ID</b> - __[ONLY SET THIS IF USED IN FLOW]__ this is record id to attach files to which should be variable passed in from Flow
    * <b>Template</b> - select the template to apply
    * <b>Show File Preview</b> - for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features
 
