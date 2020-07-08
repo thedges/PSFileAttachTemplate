@@ -15,7 +15,7 @@ public class PSFileAttachTemplateController {
                                                 Required__c, Upload_Field__c, Community_Access__c,
                                                 Filter_Field__c, Filter_Values__c, Review__c
                                                 FROM PSFileAttachDef__c
-                                                WHERE PSFileAttachTemplate__c = :templateDefId
+                                                WHERE (PSFileAttachTemplate__c = :templateDefId OR PSFileAttachTemplate__r.Template_Name__c = :templateDefId)
                                                  ORDER BY Required__c DESC, Filename__c ASC])
             {
                 FileDef fd = new FileDef();

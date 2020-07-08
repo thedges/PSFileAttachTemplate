@@ -4,11 +4,18 @@
 		var self = this;
 		var map = {};
 
+		var recId = component.get("v.flowRecordId");
+        if (recId == null)
+        {
+            recId = component.get("v.recordId");
+        }
+
+
 		// save the case
 		var action = component.get("c.getFileDefs");
 		action.setParams({
 			"templateDefId": component.get("v.templateDefId"),
-			"recordId": component.get("v.recordId")
+			"recordId": recId
 		});
 
 		action.setCallback(this, function (actionResult) {
