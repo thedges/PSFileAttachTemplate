@@ -5,7 +5,7 @@
 		var map = {};
 
 		var recId = component.get("v.flowRecordId");
-        if (recId == null)
+        if (recId == null || recId == '')
         {
             recId = component.get("v.recordId");
         }
