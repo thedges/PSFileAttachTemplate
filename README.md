@@ -7,20 +7,30 @@ This package contains a Lightning component for declaring a template to define r
 
 It provides following key functionality:
 * <b>File Template</b> - create a template to define the required and optional files to allow user to attach to a record. The template utilizes the PSFileAttachTemplate and PSFileAttachDef custom objects. You can specify the following for each file to be attached:
-   * <b>Filename</b> - the name to set at the title of the uploaded file
-   * <b>Required</b> - set boolean if file is required
-   * <b>Allowed Extensions</b> - the file extensions allowed for this document. Provide a comma separated value list like "jpg,png,pdf,zip". Leave blank if you will accept any document format.
-   * <b>Description</b> - a description of the file to upload and any user instructions
-   * <b>Online Template</b> - a URL to a document template that user can download to fill out and upload
-   * <b>Upload Field</b> - the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded.
-   * <b>Community Access</b> - a boolean field to set if community users should be able to view the file uploaded by internal user
-   * <b>Review</b> - a boolean field to identify that this document should be reviewed. It will show "yellow" when document is first uploaded until a user clicks the "Document Reviewed" checkbox at bottom of the document card. The user name and datetime when the checkbox was clicked will be logged and displayed.
-   * <b>Filter Field</b> - the field API name on the parent object that you want to filter documents by. This provides ability to show/hide documents based on a record field value. A good use case is to filter based on picklist field.
-   * <b>Filter Values</b> - a comma-separated list of values that above filter field must match to show this document
+
+   | Parameter | Description |
+   | --------- | ----------- |
+   | Filename | the name to set at the title of the uploaded file |
+   | Required | set boolean if file is required |
+   | Allowed Extensions | the file extensions allowed for this document. Provide a comma separated value list like "jpg,png,pdf,zip". Leave blank if you will accept any document format |
+   | Description | a description of the file to upload and any user instructions |
+   | Online Template | a URL to a document template that user can download to fill out and upload |
+   | Upload Field | the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded |
+   | Community Access | a boolean field to set if community users should be able to view the file uploaded by internal user |
+   | Review | a boolean field to identify that this document should be reviewed. It will show "yellow" when document is first uploaded until a user clicks the "Document Reviewed" checkbox at bottom of the document card. The user name and datetime when the checkbox was clicked will be logged and displayed |
+   | Filter Field | the field API name on the parent object that you want to filter documents by. This provides ability to show/hide documents based on a record field value. A good use case is to filter based on picklist field |
+   | Filter Values | a comma-separated list of values that above filter field must match to show this document |
    
 * <b>Lightning Component</b> - a component that can be used on internal pages or community pages. Component provides a card based layout for your required/optional files to be attached. Uploaded files are highlighted in green, required files that have not been uploaded are highlighted in red, and optional files are highlighted in grey (but change to green when uploaded).
 
    Configuration options:
+   
+   | Parameter | Description |
+   | --------- | ----------- |
+   | Record ID | __[ONLY SET THIS IF USED IN FLOW]__ this is record id to attach files to which should be variable passed in from Flow |
+   | Template | select the template to apply |
+   | Show File PreviewD | for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features |
+   
    * <b>Record ID</b> - __[ONLY SET THIS IF USED IN FLOW]__ this is record id to attach files to which should be variable passed in from Flow
    * <b>Template</b> - select the template to apply
    * <b>Show File Preview</b> - for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features
