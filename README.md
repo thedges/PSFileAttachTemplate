@@ -45,6 +45,16 @@ It provides following key functionality:
   6. Drop the PSFileAttachTemplate Lightning Component on an internal or community page. Configure the Lightning Component and select the appropriate template name you specified earlier.
 
 
+# PSFileAttachTemplate2
+A modified version of this component is also provided. This was built for demo requiring uploading multiple files for a given section. This component provides a subsection of features that will be defined below. Here is screen shot of component:
+
+![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate2.png "PSFileAttachTemplate2")
+
+A sample of the component being used is here:
+
+![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate2.gif "PSFileAttachTemplate2 Usage")
+
+
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
