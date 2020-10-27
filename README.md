@@ -65,17 +65,13 @@ A sample of the component being used is here:
      | Parameter | Description |
      | --------- | ----------- |
      | Filename | the name of the section to upload multiple document for |
-     | Description | a description of this section. For the section header, it will concatenate "<filename> - <description>" as shown in sample screenshots above. |
-  
-  
-     * <b>FileName</b> - the name of the section to upload multiple document for
-     * <b>Description</b> - a description of this section. For the section header, it will concatenate "<filename> - <description>" as shown in sample screenshots above.
-     * <b>Order</b> - the order to show the sections in
-     * <b>Required</b> - boolean if this section is required to upload files
-     * <b>Community Access</b> - a boolean field to set if community users should be able to view the file uploaded by internal user
-     * <b>Upload Field</b> - the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded.
-     * <b>Minimum</b> - minimum number of files to upload before it is marked as completed for that section
-     * <b>Allowed Extensions</b> - the file extensions allowed for this document. Provide a comma separated value list like "jpg,png,pdf,zip". Leave blank if you will accept any document format.
+     | Description | a description of this section. For the section header, it will concatenate "[filename] - [description]" as shown in sample screenshots above. |
+     | Order | the order to show the sections in |
+     | Required | boolean if this section is required to upload files |
+     | Community Access | a boolean field to set if community users should be able to view the file uploaded by internal user |
+     | Upload Field | the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded |
+     | Minimum | minimum number of files to upload before it is marked as completed for that section |
+     | Allowed Extensions | the file extensions allowed for this document. Provide a comma separated value list like "jpg,png,pdf,zip". Leave blank if you will accept any document format |
   
      All other fields in **PSFileAttachDef** are ignored for this **psFileAttachTemplate2** component.
      
