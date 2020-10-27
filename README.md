@@ -30,20 +30,19 @@ It provides following key functionality:
    | Record ID | __[ONLY SET THIS IF USED IN FLOW]__ this is record id to attach files to which should be variable passed in from Flow |
    | Template | select the template to apply |
    | Show File PreviewD | for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features |
-   
-   * <b>Record ID</b> - __[ONLY SET THIS IF USED IN FLOW]__ this is record id to attach files to which should be variable passed in from Flow
-   * <b>Template</b> - select the template to apply
-   * <b>Show File Preview</b> - for uploaded files, show a preview of file in bottom of card that allows user to click in to it for more features
 
 ![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate-filePreview.png "File Preview Option")
 
    The card shows the following:
-   * <b>Title</b> - the name of the file as defined in file definiton above. The file name is clickable once a file is uploaded.
-   * <b>Description</b> - the description details as defined in the file definition above
-   * <b>File Upload button</b> - section to upload file (either pick file on file system or drag-n-drop)
-   * <b>File State</b> - for files that have been uploaded, the file stats: size, type, load date/time
-   * <b>Template Icon</b> - icon that when clicked will take user to the online template defined in the file definition
-   * <b>Delete Icon</b> - for an uploaded file, a delete icon to easily be able to delete file if needed
+   
+   | Parameter | Description |
+   | --------- | ----------- |
+   | Title  | the name of the file as defined in file definiton above. The file name is clickable once a file is uploaded  |
+   | Description  | the description details as defined in the file definition above  |
+   | File Upload button  |  section to upload file (either pick file on file system or drag-n-drop) |
+   | File State  | for files that have been uploaded, the file stats: size, type, load date/time  |
+   | Template Icon  |  icon that when clicked will take user to the online template defined in the file definition |
+   | Delete Icon  | for an uploaded file, a delete icon to easily be able to delete file if needed  |
 
 
 <b>Here are steps to use this component:</b>
