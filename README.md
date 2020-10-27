@@ -40,9 +40,9 @@ It provides following key functionality:
   1. Install the component per the "Deploy to Salesforce" button below
   2. Setup users to have access to custom objects that drive the template. Either assign the permset "PSFileAttachTemplate" to your users  ...or... make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects and PSFileAttachTemplate tab
   3. If you are using the component in a community, by default is seems the org wide default for the PSFileAttachTemplate object will default to 'Private'. Make sure that is set to 'Public Read Only' else **the component will not show in community**.
-  4. Navigate to the PSFileAttachTemplate tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
+  4. Navigate to the **PSFileAttachTemplate** tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
   5. For the template, create a list of file definitions for the files to attach to the record. Set the record fields (filename, required, description, etc...) as defined above
-  6. Drop the PSFileAttachTemplate Lightning Component on an internal or community page. Configure the Lightning Component and select the appropriate template name you specified earlier.
+  6. Drop the **PSFileAttachTemplate** Lightning Component on an internal or community page. Configure the Lightning Component and select the appropriate template name you specified earlier.
 
 
 # PSFileAttachTemplate2
@@ -54,7 +54,29 @@ A sample of the component being used is here:
 
 ![alt text](https://github.com/thedges/PSFileAttachTemplate/blob/master/PSFileAttachTemplate2.gif "PSFileAttachTemplate2 Usage")
 
+<b>Here are steps to use this component:</b>
 
+ 1. Install the component per the "Deploy to Salesforce" button below
+  2. Setup users to have access to custom objects that drive the template. Either assign the permset "PSFileAttachTemplate" to your users  ...or... make sure users have read/write access to the PSFileAttachTemplate and PSFileAttachDef objects and PSFileAttachTemplate tab
+  3. If you are using the component in a community, by default is seems the org wide default for the PSFileAttachTemplate object will default to 'Private'. Make sure that is set to 'Public Read Only' else **the component will not show in community**.
+  4. Navigate to the **PSFileAttachTemplate** tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
+  5. For the template, create a list of file definitions for the files to attach to the record. Set the record fields (filename, required, description, etc...) as defined above. This component only uses the following fields of the **PSFileAttachDef** object:
+     * <b>FileName</b> - the name of the section to upload multiple document for
+     * <b>Description</b> - a description of this section. For the section header, it will concatenate "<filename> - <description>" as shown in sample screenshots above.
+     * <b>Order</b> - the order to show the sections in
+     * <b>Required</b> - boolean if this section is required to upload files
+     * <b>Community Access</b> - a boolean field to set if community users should be able to view the file uploaded by internal user
+     * <b>Upload Field</b> - the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded.
+     * <b>Minimum</b> - minimum number of files to upload before it is marked as completed for that section
+     * <b>Allowed Extensions</b> - the file extensions allowed for this document. Provide a comma separated value list like "jpg,png,pdf,zip". Leave blank if you will accept any document format.
+  
+     All other fields in **PSFileAttachDef** are ignored for this **psFileAttachTemplate2** component.
+     
+  6. Drop the **psFileAttachTemplate2** Lightning Component on an internal or community page. Configure the Lightning Component and select the appropriate template name you specified earlier.
+
+
+
+## Configuration parameters
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
