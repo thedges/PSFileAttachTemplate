@@ -1,0 +1,44 @@
+<template>
+
+    <div class="container">
+        <div class="item-left vertical-container">
+            <div class="vertical-center">
+                <lightning-icon icon-name={iconName} alternative-text="Approved" title="Approved"
+                    size="Xx-small"></lightning-icon>
+            </div>
+        </div>
+        <div class="item-center slds-p-left_smallX">
+            <span style="font-weight: bold;">{fileDef.filename}</span>: <span style="font-style: italic;">{fileDef.description}</span>
+        </div>
+        <div class="item-right vertical-container">
+            <div class="right vertical-center">
+                <template if:false={showFileUpload}>
+                    <lightning-icon icon-name="utility:new" alternative-text="Add Files" title="Add Files" size="xx-small"
+                        onclick={addFile}></lightning-icon>
+                </template>
+                <template if:true={showFileUpload}>
+                    <lightning-icon icon-name="utility:ban" alternative-text="Close Files" title="Close Files" size="xx-small"
+                        onclick={removeFile}></lightning-icon>
+                </template>
+
+            </div>
+        </div>
+
+    </div>
+    <template if:true={localFileDef}>
+        <div>
+            <template for:each={localFileDef.fileList} for:item="fileDef">
+                <template if:true={fileDef.uploaded}>
+                    <c-ps-file-attach-entry-2 file-def={fileDef} key={fileDef.id} ondelete={handleDeleteFileEvent}></c-ps-file-attach-entry-2>
+                </template>
+            </template>
+        </div>
+    </template>
+    <template if:true={showFileUpload}>
+        <div class="slds-align_absolute-center">
+            <lightning-file-upload label="" name="fileUploader" accept={fileDef.allowedExtensions}
+                record-id={recordId} onuploadfinished={handleUploadFinished} multiple>
+            </lightning-file-upload>
+        </div>
+    </template>
+</template>

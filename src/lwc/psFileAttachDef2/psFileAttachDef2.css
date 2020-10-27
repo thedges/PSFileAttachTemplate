@@ -1,0 +1,40 @@
+.container {
+    display: inline-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flexbox;
+    display: -webkit-flex;
+  }
+  
+  .item-left {
+    flex: 0 0 50px;
+  }
+  
+  .item-center { 
+    flex-grow: 1; /* Set the middle element to grow and stretch */
+  }
+
+  .item-right {
+    flex: 0 0 50px;
+  }
+
+  .right {
+    position: absolute;
+    right: 0px;
+  }
+
+  .vertical-container {
+    position: relative;
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .tab {
+      margin-left: 50px;
+  }

@@ -3,6 +3,7 @@
     <types>
         <members>PSFileAttachCardController</members>
         <members>PSFileAttachTemplateController</members>
+        <members>PSFileAttachTemplateController2</members>
         <members>PSFileAttachTemplatePicklist</members>
         <name>ApexClass</name>
     </types>
@@ -12,6 +13,10 @@
         <members>PSFileAttachRefresh</members>
         <members>PSFileAttachTemplate</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>ContentVersion.PSFileAttachDefID__c</members>
+        <name>CustomField</name>
     </types>
     <types>
         <members>PSFileAttachDef__c</members>
@@ -35,6 +40,12 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>psFileAttachDef2</members>
+        <members>psFileAttachEntry2</members>
+        <members>psFileAttachTemplate2</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
         <members>PSFileAttachTemplate</members>
         <name>PermissionSet</name>
     </types>
@@ -42,5 +53,5 @@
         <members>PSFileAttachWarningIcon</members>
         <name>StaticResource</name>
     </types>
-    <version>42.0</version>
+    <version>45.0</version>
 </Package>

@@ -134,6 +134,7 @@ public class PSFileAttachTemplateController {
         }
     }
 
+
     public static List<String> parseCSVString(String str)
     {
         return parseDelimitedString(str, ',');
@@ -242,6 +243,10 @@ public class PSFileAttachTemplateController {
         @AuraEnabled public String uploadField;
         @AuraEnabled public Boolean communityAccess = false;
         @AuraEnabled public Boolean reviewOption = false;
+        @AuraEnabled public Integer order = null;
+        @AuraEnabled public Integer minimum = null;
+        @AuraEnabled public Integer maximum = null;
+        @AuraEnabled public Boolean keepFilename = false;
 
         @AuraEnabled public Boolean reviewed = false;
         @AuraEnabled public String reviewerName;

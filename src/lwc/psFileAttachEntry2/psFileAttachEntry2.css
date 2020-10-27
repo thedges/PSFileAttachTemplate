@@ -1,0 +1,32 @@
+.tab {
+  margin-left: 50px;
+}
+
+.container {
+  display: flex;
+  cursor: pointer;
+  width: 70%;
+}
+
+.icon {
+  width: 40px; /* A fixed width as the default */
+}
+
+.filename {
+    width: 150px;
+    vertical-align: middle;
+}
+
+.dttm {
+  width: 150px;
+}
+
+.trash {
+  width: 40px;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }

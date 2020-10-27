@@ -1,0 +1,27 @@
+<template>
+    <div class="container tab slds-p-top_small" onmouseenter={handleEnter} onmouseleave={handleLeave}>
+        <div class="icon vertical-center"  onclick={handleClick}>
+            <lightning-icon icon-name={icon} alternative-text="Image" title="Image" size="medium">
+            </lightning-icon>
+        </div>
+
+        <div class="filename vertical-center"  onclick={handleClick}>
+                {fileDef.filename} 
+        </div>
+
+        <div class="dttm vertical-center"  onclick={handleClick}>
+                {fileDef.uploadDttm}
+        </div>
+
+        <!--
+        <lightning-input type="text" label="Enter some text" variant="label-hidden"></lightning-input>
+        -->
+
+        <div class="trash vertical-center">
+            <template if:true={showDelete}>
+                <lightning-icon icon-name="utility:delete" alternative-text="Delete" title="Delete" size="xx-small"
+                    onclick={deleteFile}></lightning-icon>
+            </template>
+        </div>
+    </div>
+</template>

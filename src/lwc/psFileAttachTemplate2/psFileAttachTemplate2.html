@@ -1,0 +1,7 @@
+<template>
+    <template for:each={fileDefs} for:item="fileDef">
+        <div class="slds-p-bottom_medium" key={fileDef.id}>
+            <c-ps-file-attach-def-2 file-def={fileDef} record-id={recordId}></c-ps-file-attach-def-2>
+        </div>
+    </template>
+</template>
