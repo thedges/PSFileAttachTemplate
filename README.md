@@ -61,6 +61,13 @@ A sample of the component being used is here:
   3. If you are using the component in a community, by default is seems the org wide default for the PSFileAttachTemplate object will default to 'Private'. Make sure that is set to 'Public Read Only' else **the component will not show in community**.
   4. Navigate to the **PSFileAttachTemplate** tab and create a new template. Give it a logical name as you will use this when configuring the Lightning Component later
   5. For the template, create a list of file definitions for the files to attach to the record. Set the record fields (filename, required, description, etc...) as defined above. This component only uses the following fields of the **PSFileAttachDef** object:
+  
+  | Parameter | Description |
+  | --------- | ----------- |
+  | Filename | the name of the section to upload multiple document for |
+  | Description | a description of this section. For the section header, it will concatenate "<filename> - <description>" as shown in sample screenshots above. |
+  
+  
      * <b>FileName</b> - the name of the section to upload multiple document for
      * <b>Description</b> - a description of this section. For the section header, it will concatenate "<filename> - <description>" as shown in sample screenshots above.
      * <b>Order</b> - the order to show the sections in
