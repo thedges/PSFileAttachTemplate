@@ -16,7 +16,8 @@ public class PSFileAttachTemplateController {
                                                 Filter_Field__c, Filter_Values__c, Review__c
                                                 FROM PSFileAttachDef__c
                                                 WHERE (PSFileAttachTemplate__c = :templateDefId OR PSFileAttachTemplate__r.Template_Name__c = :templateDefId)
-                                                 ORDER BY Required__c DESC, Filename__c ASC])
+                                                 //ORDER BY Required__c DESC, Filename__c ASC])
+                                                 ORDER BY Order__c ASC])
             {
                 FileDef fd = new FileDef();
                 fd.id = t.id;
