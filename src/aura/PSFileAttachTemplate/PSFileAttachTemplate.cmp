@@ -31,6 +31,10 @@
   />
 
   <div>
+    <div style="text-align: right;" class="slds-p-bottom_xx-small">
+      <lightning:icon class="refreshIcon" iconName="utility:retweet" size="small"
+                        alternativeText="Refresh Documents" onclick="{!c.handleRefresh}" />
+    </div>
     <div class="slds-grid slds-wrap slds-gutters slds-grid--vertical-stretch">
       <aura:iteration items="{!v.fileDefs}" var="f">
         <div
