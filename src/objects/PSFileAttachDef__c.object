@@ -93,6 +93,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Filename_Interface_Impl__c</fullName>
+        <description>The implementation of the file naming interface for specific naming logic</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Apex class implementation name of the file naming interface for specific naming logic</inlineHelpText>
+        <label>Filename Interface Impl</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Filename__c</fullName>
         <externalId>false</externalId>
         <label>Filename</label>

@@ -15,6 +15,8 @@
       fileName: fileDef.filename,
       bField: fileDef.uploadField,
       commAccess: fileDef.communityAccess,
+      filenameImpl: fileDef.filenameImpl,
+      keepFilename: fileDef.keepFilename
     });
 
     action.setCallback (this, function (actionResult) {

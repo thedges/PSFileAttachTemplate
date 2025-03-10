@@ -1,19 +1,27 @@
 public without sharing class PSFileAttachCardController {
   @AuraEnabled
-  public static void setFileApex(String recordId, String fileId, String fileName, String bField, Boolean commAccess)
+  public static void setFileApex(String recordId, String fileId, String fileName, String bField, Boolean commAccess, Boolean keepFilename, String fileNameImpl)
   {
       System.debug('setFileApex...');
       System.debug('recordId=' + recordId);
       System.debug('fileId=' + fileId);
       System.debug('fileName=' + fileName);
+      System.debug('fileNameImpl=' + fileNameImpl);
+      System.debug('keepFilename=' + keepFilename);
       System.debug('bField=' + bField);
 
       try {
-        // update filename on content document
+        // override name if interface class implementation (PSFileAttachTemplateFileNamingInterface)
+        if (keepFilename) 
+        {
+            fileName = null;
+        } 
+
+         // update filename on content document
          List<ContentVersion> fileList = [SELECT Id, Title FROM ContentVersion WHERE ContentDocumentId = :fileId];
          if (fileList != null && fileList.size() == 1)
          {
-             fileList[0].Title = fileName;
+             if (fileName != null) fileList[0].Title = fileName;
          }
          update fileList;
 

@@ -2,8 +2,10 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>PSFileAttachCardController</members>
+        <members>PSFileAttachFileNameTestImpl</members>
         <members>PSFileAttachTemplateController</members>
         <members>PSFileAttachTemplateController2</members>
+        <members>PSFileAttachTemplateFileNamingInterface</members>
         <members>PSFileAttachTemplatePicklist</members>
         <name>ApexClass</name>
     </types>

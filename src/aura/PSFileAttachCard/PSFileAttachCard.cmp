@@ -18,9 +18,9 @@
         <div class="slds-grid">
             <div class="slds-size_10-of-12 title">
                 <aura:renderIf isTrue="{!v.fileDef.uploaded}">
-                    <span class="showHover" onclick="{!c.handleViewAttachment}">{!v.fileDef.filename}</span>
+                    <span class="showHover" onclick="{!c.handleViewAttachment}">{!v.fileDef.defaultFilename}</span>
                     <aura:set attribute="else">
-                        {!v.fileDef.filename}
+                        {!v.fileDef.defaultFilename}
                     </aura:set>
                 </aura:renderIf>
 

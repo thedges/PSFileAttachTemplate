@@ -11,9 +11,9 @@ public class PSFileAttachTemplateController {
             // query all file definitions //
             ////////////////////////////////
             List<FileDef> fileDefList = new List<FileDef>();
-            for (PSFileAttachDef__c t : [SELECT Id, Filename__c, Allowed_Extensions__c, Description__c, Online_Template__c,
+            for (PSFileAttachDef__c t : [SELECT Id, Filename__c, Filename_Interface_Impl__c, Allowed_Extensions__c, Description__c, Online_Template__c,
                                                 Required__c, Upload_Field__c, Community_Access__c,
-                                                Filter_Field__c, Filter_Values__c, Review__c
+                                                Filter_Field__c, Filter_Values__c, Review__c,  Keep_Filename__c
                                                 FROM PSFileAttachDef__c
                                                 WHERE (PSFileAttachTemplate__c = :templateDefId OR PSFileAttachTemplate__r.Template_Name__c = :templateDefId)
                                                  //ORDER BY Required__c DESC, Filename__c ASC])
@@ -21,6 +21,7 @@ public class PSFileAttachTemplateController {
             {
                 FileDef fd = new FileDef();
                 fd.id = t.id;
+                fd.defaultFilename = t.Filename__c;
                 fd.filename = t.Filename__c;
                 fd.allowedExtensions = parseExtensions(t.Allowed_Extensions__c);
                 fd.description = t.Description__c;
@@ -31,8 +32,21 @@ public class PSFileAttachTemplateController {
                 fd.filterField = t.Filter_Field__c;
                 fd.filterMatchValues = t.Filter_Values__c;
                 fd.reviewOption = t.Review__c;
+                fd.filenameImpl = t.Filename_Interface_Impl__c;
+                fd.keepFilename = t.Keep_Filename__c;
+               
+                            // override name if interface class implementation (PSFileAttachTemplateFileNamingInterface)
+                if (fd.filenameImpl != null)
+                {
+                   PSFileAttachTemplateFileNamingInterface instance = (PSFileAttachTemplateFileNamingInterface)Type.forName(fd.filenameImpl).newInstance();
+                   fd.fileName = instance.getFilename(recordId, fd.defaultFilename);
+                }
+                System.debug('FileDef >' + JSON.serializePretty(fd));
+
                 fileDefList.add(fd);
             }
+
+
 
             ////////////////////////////////////////////////////
             // filter out any that don't pass filter criteria //
@@ -236,6 +250,7 @@ public class PSFileAttachTemplateController {
     public class FileDef
     {
         @AuraEnabled public String id;
+        @AuraEnabled public String defaultFilename;
         @AuraEnabled public String filename;
         @AuraEnabled public String allowedExtensions;
         @AuraEnabled public String description;
@@ -248,6 +263,7 @@ public class PSFileAttachTemplateController {
         @AuraEnabled public Integer minimum = null;
         @AuraEnabled public Integer maximum = null;
         @AuraEnabled public Boolean keepFilename = false;
+        @AuraEnabled public String filenameImpl = null;
 
         @AuraEnabled public Boolean reviewed = false;
         @AuraEnabled public String reviewerName;
