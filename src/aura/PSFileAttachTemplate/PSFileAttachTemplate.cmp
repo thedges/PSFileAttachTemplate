@@ -32,11 +32,7 @@
 
   <div>
     <div style="text-align: right;" class="slds-p-bottom_xx-small">
-<<<<<<< HEAD
-      <lightning:icon class="refreshIcon" iconName="utility:refresh" size="x-small"
-=======
       <lightning:icon class="refreshIcon" iconName="utility:refresh" size="small"
->>>>>>> 5d5377a8ce716708d6b5e7d8e8fecce3e90a47a6
                         alternativeText="Refresh Documents" onclick="{!c.handleRefresh}" />
     </div>
     <div class="slds-grid slds-wrap slds-gutters slds-grid--vertical-stretch">
