@@ -18,6 +18,8 @@ It provides following key functionality:
    | Upload Field | the API name of field (checkbox) on target object that will get set to true when file is uploaded or false if file is deleted. This field can be used to trigger Process Builer flows for automating other tasks. For example, you could create workflow to trigger once all required files have been uploaded |
    | Community Access | a boolean field to set if community users should be able to view the file uploaded by internal user |
    | Review | a boolean field to identify that this document should be reviewed. It will show "yellow" when document is first uploaded until a user clicks the "Document Reviewed" checkbox at bottom of the document card. The user name and datetime when the checkbox was clicked will be logged and displayed |
+   | Keep Filename | a boolean field to keep the filename of the file uploaded (i.e. keep original name as defined on users system) |
+   | Filename Interface Impl | the Apex class name for providing custom file naming. To use this, you must provide the name of an implementation class of the PSFileAttachTemplateFileNamingInterface interface. See PSFileAttachFileNameTestImpl as an example. |
    | Filter Field | the field API name on the parent object that you want to filter documents by. This provides ability to show/hide documents based on a record field value. A good use case is to filter based on picklist field |
    | Filter Values | a comma-separated list of values that above filter field must match to show this document |
    
